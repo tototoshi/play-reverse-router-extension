@@ -2,7 +2,7 @@ lazy val `extension` = project.in(file("extension"))
   .settings(
     organization := "com.github.tototoshi",
     name := "reverse-router-extension",
-    version := "0.1.0-SNAPSHOT",
+    version := "0.1.0",
     scalaVersion := "2.11.8",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % "2.5.4"
