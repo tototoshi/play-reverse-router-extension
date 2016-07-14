@@ -19,3 +19,8 @@ lazy val example = project.in(file("example"))
 ```html
 <a href="@routes.HomeController.index().withQueryString("a" -> "aaa", "b" -> "bbb", "b" -> "ccc")">link</a>
 ```
+
+
+## License
+
+[Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
