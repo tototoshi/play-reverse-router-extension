@@ -1,13 +1,15 @@
 package controllers
 
 import play.api.Logger
-import play.api.mvc.{ Action, Controller }
+import play.api.mvc.{AbstractController, AnyContent, ControllerComponents, Request}
+import javax.inject.{Inject, Singleton}
 
-class HomeController extends Controller {
+@Singleton
+class HomeController @Inject() (cc: ControllerComponents) extends AbstractController(cc) {
 
   private val logger = Logger(classOf[HomeController])
 
-  def index() = Action { request =>
+  def index() = Action { request: Request[AnyContent] =>
     request.queryString.foreach { case (k, v) =>
         logger.info(s"$k=$v")
     }

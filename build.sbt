@@ -1,25 +1,39 @@
+val scalaVersion_2_12 = "2.12.2"
+val scalaVersion_2_11 = "2.11.8"
+
+val playVersion = play.core.PlayVersion.current
+
+lazy val baseSettings = Seq(
+  organization := "com.github.tototoshi",
+  scalaVersion := scalaVersion_2_12,
+  crossScalaVersions := Seq(scalaVersion_2_11, scalaVersion_2_12),
+  libraryDependencies ++= Seq(
+    "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+  )
+)
+
 lazy val `extension` = project.in(file("extension"))
+  .settings(baseSettings)
   .settings(
-    organization := "com.github.tototoshi",
     name := "reverse-router-extension",
     version := "0.1.0",
-    scalaVersion := "2.11.8",
     libraryDependencies ++= Seq(
-      "com.typesafe.play" %% "play" % "2.5.4"
+      "com.typesafe.play" %% "play" % playVersion
     )
   )
   .settings(publishSettings)
 
 lazy val example = project.in(file("example"))
   .enablePlugins(PlayScala)
+  .settings(baseSettings)
   .settings(
-    scalaVersion := "2.11.8",
     TwirlKeys.templateImports += "com.github.tototoshi.play.reverserouter.Implicits._"
   )
   .settings(nonPublishSettings)
   .dependsOn(`extension`)
 
 lazy val root = project.in(file("."))
+  .settings(baseSettings)
   .settings(nonPublishSettings)
   .aggregate(`extension`, example)
 
