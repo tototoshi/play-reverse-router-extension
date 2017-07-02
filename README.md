@@ -8,10 +8,13 @@
 lazy val example = project.in(file("example"))
   .enablePlugins(PlayScala)
   .settings(
-    scalaVersion := "2.11.8",
+    scalaVersion := "2.12.2",
     TwirlKeys.templateImports += "com.github.tototoshi.play.reverserouter.Implicits._",
     libraryDependencies ++= Seq(
-      "com.github.tototoshi" %% "reverse-router-extension" % "0.1.0"
+      // for Play 2.6
+      "com.github.tototoshi" %% "reverse-router-extension" % "0.2.0"
+      // for Play 2.5
+      // "com.github.tototoshi" %% "reverse-router-extension" % "0.1.0"
     )
   )
 ```

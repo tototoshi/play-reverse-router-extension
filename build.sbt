@@ -1,3 +1,5 @@
+val _version = "0.2.0"
+
 val scalaVersion_2_12 = "2.12.2"
 val scalaVersion_2_11 = "2.11.8"
 
@@ -16,7 +18,7 @@ lazy val `extension` = project.in(file("extension"))
   .settings(baseSettings)
   .settings(
     name := "reverse-router-extension",
-    version := "0.1.0",
+    version := "0.2.0",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % playVersion
     )
