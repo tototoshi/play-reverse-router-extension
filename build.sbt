@@ -39,12 +39,6 @@ lazy val root = project.in(file("."))
   .settings(nonPublishSettings)
   .aggregate(`extension`, example)
 
-def _publishTo(v: String) = {
-  val nexus = "https://oss.sonatype.org/"
-  if (v.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
-
 lazy val nonPublishSettings = Seq(
   publishArtifact := false,
   publish := {},
@@ -53,7 +47,11 @@ lazy val nonPublishSettings = Seq(
 
 lazy val publishSettings = Seq(
   publishMavenStyle := true,
-  publishTo <<= version { (v: String) => _publishTo(v) },
+  publishTo := {
+    val nexus = "https://oss.sonatype.org/"
+    if (version.value.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
+    else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+  },
   publishArtifact in Test := false,
   pomExtra :=
     <url>http://github.com/tototoshi/play-reverse-router-extension</url>
