@@ -1,4 +1,4 @@
-val _version = "0.2.0"
+val _version = "0.3.0-SNAPSHOT"
 
 val scalaVersion_2_12 = "2.12.2"
 val scalaVersion_2_11 = "2.11.8"
