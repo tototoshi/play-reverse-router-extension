@@ -7,6 +7,11 @@ lazy val baseSettings = Seq(
   organization := "com.github.tototoshi",
   scalaVersion := scalaVersion_2_12,
   crossScalaVersions := Seq(scalaVersion_2_11, scalaVersion_2_12),
+  publishTo := {
+    val nexus = "https://oss.sonatype.org/"
+    if (version.value.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
+    else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+  },
   libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "3.0.1" % "test"
   )
@@ -45,11 +50,6 @@ lazy val nonPublishSettings = Seq(
 
 lazy val publishSettings = Seq(
   publishMavenStyle := true,
-  publishTo := {
-    val nexus = "https://oss.sonatype.org/"
-    if (version.value.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
-    else Some("releases" at nexus + "service/local/staging/deploy/maven2")
-  },
   publishArtifact in Test := false,
   pomExtra :=
     <url>http://github.com/tototoshi/play-reverse-router-extension</url>
