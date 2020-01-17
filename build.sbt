@@ -1,19 +1,19 @@
 val scalaVersion_2_12 = "2.12.8"
-val scalaVersion_2_11 = "2.11.12"
+val scalaVersion_2_13 = "2.13.1"
 
 val playVersion = play.core.PlayVersion.current
 
 lazy val baseSettings = Seq(
   organization := "com.github.tototoshi",
   scalaVersion := scalaVersion_2_12,
-  crossScalaVersions := Seq(scalaVersion_2_11, scalaVersion_2_12),
+  crossScalaVersions := Seq(scalaVersion_2_13, scalaVersion_2_12),
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
     if (version.value.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
     else Some("releases" at nexus + "service/local/staging/deploy/maven2")
   },
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+    "org.scalatest" %% "scalatest" % "3.1.0" % "test"
   )
 )
 
@@ -21,7 +21,7 @@ lazy val `extension` = project.in(file("extension"))
   .settings(baseSettings)
   .settings(
     name := "reverse-router-extension",
-    version := "0.3.0",
+    version := "0.4.0-SNAPSHOT",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % playVersion
     )
@@ -52,11 +52,11 @@ lazy val publishSettings = Seq(
   publishMavenStyle := true,
   publishArtifact in Test := false,
   pomExtra :=
-    <url>http://github.com/tototoshi/play-reverse-router-extension</url>
+    <url>https://github.com/tototoshi/play-reverse-router-extension</url>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
-          <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
           <distribution>repo</distribution>
         </license>
       </licenses>
@@ -68,7 +68,7 @@ lazy val publishSettings = Seq(
         <developer>
           <id>tototoshi</id>
           <name>Toshiyuki Takahashi</name>
-          <url>http://tototoshi.github.io</url>
+          <url>https://tototoshi.github.io</url>
         </developer>
       </developers>
 )
