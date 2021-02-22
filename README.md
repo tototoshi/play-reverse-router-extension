@@ -1,6 +1,6 @@
 # play-reverse-router-extension
 
-[![Build Status](https://travis-ci.org/tototoshi/play-reverse-router-extension.png)](https://travis-ci.org/tototoshi/play-reverse-router-extension)
+[![Scala CI](https://github.com/tototoshi/play-reverse-router-extension/actions/workflows/scala.yml/badge.svg)](https://github.com/tototoshi/play-reverse-router-extension/actions/workflows/scala.yml)
 
 ## Install
 
