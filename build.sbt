@@ -5,7 +5,7 @@ val playVersion = play.core.PlayVersion.current
 
 lazy val baseSettings = Seq(
   organization := "com.github.tototoshi",
-  scalaVersion := scalaVersion_2_12,
+  scalaVersion := scalaVersion_2_13,
   crossScalaVersions := Seq(scalaVersion_2_13, scalaVersion_2_12),
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
