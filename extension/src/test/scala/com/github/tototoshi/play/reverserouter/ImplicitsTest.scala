@@ -1,9 +1,9 @@
 package com.github.tototoshi.play.reverserouter
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 import play.api.mvc.Call
 
-class ImplicitsTest extends FunSuite {
+class ImplicitsTest extends AnyFunSuite {
 
   import Implicits._
 
