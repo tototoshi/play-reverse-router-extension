@@ -13,7 +13,7 @@ lazy val baseSettings = Seq(
     else Some("releases" at nexus + "service/local/staging/deploy/maven2")
   },
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.2.6" % "test"
+    "org.scalatest" %% "scalatest" % "3.2.7" % "test"
   )
 )
 
