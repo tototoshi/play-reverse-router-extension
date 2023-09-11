@@ -1,5 +1,5 @@
 val scalaVersion_2_12 = "2.12.18"
-val scalaVersion_2_13 = "2.13.9"
+val scalaVersion_2_13 = "2.13.12"
 
 val playVersion = play.core.PlayVersion.current
 
