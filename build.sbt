@@ -21,7 +21,7 @@ lazy val `extension` = project.in(file("extension"))
   .settings(baseSettings)
   .settings(
     name := "reverse-router-extension",
-    version := "0.4.0",
+    version := "0.5.0-SNAPSHOT",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % playVersion
     )
