@@ -1,5 +1,5 @@
 val scalaVersion_2_12 = "2.12.18"
-val scalaVersion_2_13 = "2.13.9"
+val scalaVersion_2_13 = "2.13.12"
 
 val playVersion = play.core.PlayVersion.current
 
@@ -13,7 +13,7 @@ lazy val baseSettings = Seq(
     else Some("releases" at nexus + "service/local/staging/deploy/maven2")
   },
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.2.16" % "test"
+    "org.scalatest" %% "scalatest" % "3.2.17" % "test"
   )
 )
 
