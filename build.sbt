@@ -1,12 +1,12 @@
-val scalaVersion_2_12 = "2.12.18"
 val scalaVersion_2_13 = "2.13.12"
+val scalaVersion_3 = "3.3.1"
 
 val playVersion = play.core.PlayVersion.current
 
 lazy val baseSettings = Seq(
   organization := "com.github.tototoshi",
   scalaVersion := scalaVersion_2_13,
-  crossScalaVersions := Seq(scalaVersion_2_13, scalaVersion_2_12),
+  crossScalaVersions := Seq(scalaVersion_2_13, scalaVersion_3),
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
     if (version.value.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")

@@ -9,7 +9,7 @@ class HomeController @Inject() (cc: ControllerComponents) extends AbstractContro
 
   private val logger = Logger(classOf[HomeController])
 
-  def index() = Action { request: Request[AnyContent] =>
+  def index() = Action { (request: Request[AnyContent]) =>
     request.queryString.foreach { case (k, v) =>
         logger.info(s"$k=$v")
     }
